@@ -15,8 +15,9 @@ import BreadcrumbsProvider from "./components/breadcrumbs/BreadcrumbsProvider";
 import useBreadcrumbs from "./components/breadcrumbs/use-breadcrumbs";
 import PrivateRoute from "./components/PrivateRoute";
 import { PostalCodeIndex } from "./postalCode/PostalCodeIndex";
-import { IdentifyIndex } from "./identify/IdentifyIndex";
 import { UserIndex } from "./user/UserIndex";
+import { StoreCodeIndex } from "./storeCode/StoreCodeIndex";
+import { StoreIndex } from "./store/StoreIndex";
 
 const App = (): React.ReactElement => {
   const history = useHistory();
@@ -86,8 +87,9 @@ const AppLayout = (): React.ReactElement => {
           <Switch>
             <PrivateRoute exact path="/" component={Navigation} />
             <PrivateRoute path="/postal-codes" component={PostalCodeIndex} />
-            <PrivateRoute path="/identifies" component={IdentifyIndex} />
             <PrivateRoute path="/users" component={UserIndex} />
+            <PrivateRoute path="/store-codes" component={StoreCodeIndex} />
+            <PrivateRoute path="/stores" component={StoreIndex} />
           </Switch>
         </Page>
       </MainLayout.Content>

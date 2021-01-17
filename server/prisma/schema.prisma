@@ -16,13 +16,6 @@ model PostalCode {
   websiteUrl String
 }
 
-model Identify {
-  createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
-  qrCode    String?
-  updatedAt DateTime @updatedAt
-}
-
 model User {
   createdAt DateTime @default(now())
   email     String?
@@ -34,4 +27,23 @@ model User {
   roles     String[]
   updatedAt DateTime @updatedAt
   username  String   @unique
+}
+
+model StoreCode {
+  qrCode    String?
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  isDelete  Boolean
+  storeId   String?
+  updatedAt DateTime @updatedAt
+}
+
+model Store {
+  address     String
+  createdAt   DateTime @default(now())
+  creatorId   String?
+  geoLocation String?
+  id          String   @id @default(cuid())
+  name        String?
+  updatedAt   DateTime @updatedAt
 }
