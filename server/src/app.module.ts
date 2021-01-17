@@ -1,7 +1,8 @@
 import { Module } from "@nestjs/common";
 import { PostalCodeModule } from "./postalCode/postalCode.module";
-import { IdentifyModule } from "./identify/identify.module";
 import { UserModule } from "./user/user.module";
+import { StoreCodeModule } from "./storeCode/storeCode.module";
+import { StoreModule } from "./store/store.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
 import { MorganModule } from "nest-morgan";
@@ -14,8 +15,9 @@ import { GraphQLModule } from "@nestjs/graphql";
   controllers: [],
   imports: [
     PostalCodeModule,
-    IdentifyModule,
     UserModule,
+    StoreCodeModule,
+    StoreModule,
     ACLModule,
     AuthModule,
     MorganModule,
